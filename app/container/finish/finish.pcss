@@ -1,0 +1,91 @@
+@import '../../variables.pcss';
+
+.finish {
+   position: fixed;
+   display: none;
+   top: 0;
+   right: 0;
+   height: 100vh;
+   max-height: 100%;
+   width: 100vw;
+
+   & .headline-container {
+      position: absolute;
+      top: 5vw;
+      right: 5vw;
+   }
+
+   @nest .finish-open & {
+      display: block;
+   }
+
+   & .shopper-max-naturana {
+      @nest .select-max.kauf-naturana & {
+         display: block;
+      }
+   }
+   & .shopper-max-yogu {
+      @nest .select-max.kauf-yogu & {
+         display: block;
+      }
+   }
+   & .shopper-anna-yogu {
+      @nest .select-anna.kauf-yogu & {
+         display: block;
+      }
+   }
+   & .shopper-anna-fitline {
+      @nest .select-anna.kauf-fitline & {
+         display: block;
+      }
+   }
+   & .shopper-georg-naturana {
+      @nest .select-georg.kauf-naturana & {
+         display: block;
+      }
+   }
+   & .shopper-georg-tigerino {
+      @nest .select-georg.kauf-tigerino & {
+         display: block;
+      }
+   }
+
+   @nest .select-max & {
+      background-image: linear-gradient(to bottom, var(--background-color), var(--background-color) 80%, var(--max-color) 80%, var(--max-color));
+   }
+   @nest .select-anna & {
+      background-image: linear-gradient(to bottom, var(--background-color), var(--background-color) 80%, var(--anna-color) 80%, var(--anna-color));
+   }
+   @nest .select-georg & {
+      background-image: linear-gradient(to bottom, var(--background-color), var(--background-color) 80%, var(--georg-color) 80%, var(--georg-color));
+   }
+
+   & .shopper-container {
+        left: 15vw;
+   }
+
+   & .think {
+      right: -60%!important;
+   }
+      
+   & .think.think-max {
+      right: -75%!important;
+
+      @nest .select-max & {
+         display: block;
+      }
+   }
+
+   & .think-anna {
+      @nest .select-anna & {
+         display: block;
+      }
+   }
+
+   & .think-georg {
+      @nest .select-georg & {
+         display: block;
+      }
+   }
+   
+}

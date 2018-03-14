@@ -1,0 +1,74 @@
+.shopper-container {
+  position: fixed;
+  bottom: 5%;
+  left: 5vw;
+  height: 75vh;
+  z-index: 20000;
+
+  transition: transform 1s, opacity 1s;
+
+  @nest .backward-horizontal & {
+    transform: scaleX(-1);
+  }
+
+  @nest .flipped & {
+    opacity: 0;
+  }
+
+}
+
+.shopper {
+  height: 100%;
+  display: none;
+
+
+  &.shopper-max {
+    @nest .select-max & {
+      display: block;
+    }
+  }
+
+  &.shopper-anna {
+    @nest .select-anna & {
+      display: block;
+    }
+  }
+
+  &.shopper-georg {
+    @nest .select-georg & {
+      display: block;
+    }
+  }
+}
+
+.think {
+  height: 40%;
+  position: absolute;
+  top: -25%;
+  right: -30%;
+  display: none;
+
+  @nest .backward-horizontal & {
+    display: none!important;
+  }
+
+  &.think-max.show {
+    right: -35%;
+
+    @nest .select-max & {
+      display: block;
+    }
+  }
+
+  &.think-anna.show {
+    @nest .select-anna & {
+      display: block;
+    }
+  }
+
+  &.think-georg.show {
+    @nest .select-georg & {
+      display: block;
+    }
+  }
+}

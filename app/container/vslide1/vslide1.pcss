@@ -1,0 +1,22 @@
+@import '../../variables.pcss';
+
+.vslide1 {
+    position: absolute;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-size: 100% auto;
+
+
+    @nest .select-max & {
+        background-image: linear-gradient(to bottom, var(--background-color), var(--background-color) 80%, var(--max-color) 80%, var(--max-color));
+    }
+    @nest .select-anna & {
+        background-image: linear-gradient(to bottom, var(--background-color), var(--background-color) 80%, var(--anna-color) 80%, var(--anna-color));
+    }
+    @nest .select-georg & {
+        background-image: linear-gradient(to bottom, var(--background-color), var(--background-color) 80%, var(--georg-color) 80%, var(--georg-color));
+    }
+}
+

@@ -1,0 +1,101 @@
+@import '../../variables.pcss';
+
+.slide1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../images/1_Hintergrund.png');
+  z-index: 30000;
+  overflow: hidden;
+  position: relative;
+
+  & .slide1-brille {
+    position: absolute;
+    width: 45vw;
+    left: 5vw;
+    top: 23vh;
+    animation: flip 4s infinite linear;
+  }
+
+  & .slide1-headline {
+    position: absolute;
+    top: 10vh;
+    right: 5vw;
+    width: 35vw;
+  }
+
+  & .headline {
+    position: relative;
+    font-size: 3vw;
+    text-transform: uppercase;
+    color: var(--white-color);
+
+    & .headline-text {
+    }
+
+    & .headline-text--sub {
+        border-bottom: 2px solid var(--white-color);
+    }
+
+    & .headline-pointer {
+        width: 100px;
+        border-bottom: 2px solid var(--white-color);
+        left: -100px;
+        position: absolute;
+        bottom: 0;
+        transform: rotate(-45deg);
+        transform-origin: top right;
+    }
+  }
+
+  & .slide1-job {
+    margin-top: 2vh;
+    font-size: 1.5vw;
+    color: var(--white-color);
+  }
+  
+  & .scroll {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 3%;
+    animation-name: bob;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;    
+    text-transform: uppercase;
+    color: var(--white-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & img {
+      width: 2vw;
+      height: 2vw;
+      transform: rotate(-90deg);
+      background-color: var(--icon-pfeil-color);
+      margin-top: 1.5vh;
+    }
+  }
+
+  & .future {
+    position: absolute;
+    right: 7.5%;
+    top: 7.5%;
+    font-size: 5rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    animation-name: bob;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+    @media (max-width: 576px) { 
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      font-size: 3rem;
+    }
+  }
+}

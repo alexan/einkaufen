@@ -1,0 +1,84 @@
+@import './buttons.pcss';
+@import './slide1/slide1.pcss';
+@import './slide2/slide2.pcss';
+@import './popup/popup.pcss';
+@import './vslide1/vslide1.pcss';
+@import './vslide2/vslide2.pcss';
+@import './vslide3/vslide3.pcss';
+@import './shopper/shopper.pcss';
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  max-height: 100%;
+  max-width: 100%;
+
+  position: relative;
+  overflow: auto;
+}
+
+.site-container {
+  height: 100vh;
+  width: 100vw;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.scroller {
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100%;
+  max-width: 100%;
+  display: unset;
+  position: absolute; 
+
+  @nest .container--loading & {
+    display: none;
+  }
+
+  @nest .popup-open & {
+    display: none;
+  }
+
+  @nest .view-open & {
+    display: none;
+  }
+
+  @nest .finish-open & {
+    display: none;
+  }
+
+  @nest .vertical-open & {
+    display: none;
+  }
+}
+
+.vscroller {
+  display: none;
+  min-height: 100vh;
+  position: relative;
+
+  @nest .vertical-open & {
+    display: block;
+  }
+}
+
+@keyframes bounceOut {
+  0% {
+    transform: scale(1.25);
+  },
+  50% {
+    transform: scale(.95);
+  },
+  100% {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes flip {
+   0% {transform: perspective(40vw) rotateY(0deg);}
+   25% {transform: perspective(40vw) rotateY(90deg);}
+   50% {transform: perspective(40vw) rotateY(180deg);}
+   75% {transform: perspective(40vw) rotateY(270deg);}
+   100% {transform: perspective(40vw) rotateY(360deg);}
+}

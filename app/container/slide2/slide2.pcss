@@ -1,0 +1,77 @@
+@import '../../variables.pcss';
+
+.slide2 {
+   height: 100vh;
+   width: 100vw;
+   max-width: 100%;
+   max-height: 100%;
+   overflow: hidden;
+
+   & .slide2-paralax {
+      height: 100%;
+      position: relative;
+      top: -100%;
+      transform: translate(0, 0) translate3d(0, 0, 0);   
+   }
+
+   & .heads {
+      position: absolute;
+      bottom: 5vw;
+      left: -90vw;
+      width: 90vw;
+      display: flex;
+      justify-content: space-between;
+   }
+
+   & .head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      flex-basis: 30%;
+      text-transform: uppercase;
+      font-size: 1.5vw;
+      transform: translate(0, 0) translate3d(0, 0, 0);   
+
+      & img {
+         width: 100%;
+         margin-bottom: 2vh;
+         transform: matrix(1, 0, 0, 1, 0, 0);     
+      }
+   }
+
+   & .anna {
+      color: var(--anna-color);
+   }
+
+   & .max {
+      color: var(--max-color);
+   }
+
+   & .georg {
+      color: var(--georg-color);
+   }
+
+   & .headline {
+      position: absolute;
+      top: 5vw;
+      right: 5vw;
+      font-size: 3vw;
+      text-transform: uppercase;
+
+      & .headline-text {
+         border-bottom: 2px solid var( --main-color);
+      }
+
+      & .headline-pointer {
+         width: 100px;
+         border-bottom: 2px solid var( --main-color);
+         left: -100px;
+         bottom: 0px;
+         position: absolute;
+         bottom: 0;
+         transform: rotate(-45deg);
+         transform-origin: top right;
+      }
+   }  
+}

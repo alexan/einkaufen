@@ -1,0 +1,214 @@
+@import '../../variables.pcss';
+
+.popup {
+   display: none;
+   position: absolute;
+   text-transform: uppercase;
+   height: 100vh;
+   max-height: 100%;
+   width: 100vw;
+
+   &.show {
+      display: block;
+   }
+
+   & .popup-head {
+      position: absolute;
+      height: 90vh;
+      top: 5vh;
+      left: 2vw;
+      cursor: pointer;
+   }
+
+   & .popup-headline {
+      position: absolute;
+      top: 15vh;
+      left: 45vw;
+      cursor: pointer;
+   }
+
+   & .headline {
+      position: relative;
+      font-size: 3vw;
+      text-transform: uppercase;
+
+      & .headline-text {
+         border-bottom: 2px solid var(--main-color);
+      }
+
+      & .headline-pointer {
+         width: 50px;
+         border-bottom: 2px solid var(--main-color);
+         left: -50px;
+         position: absolute;
+         bottom: 0;
+         transform: rotate(-45deg);
+         transform-origin: top right;
+      }
+   }
+
+   & .popup-job {
+      margin-top: 2vh;
+      font-size: 1.5vw;
+   }
+
+   & .popup-sub {
+      margin-top: 2vh;
+
+      & span {
+         font-size: 1.5vw;
+         color: var(--white-color);
+         padding: 0.7vh;
+      }
+   }
+
+   & .popup-atribute {
+      position: absolute;
+      bottom: 5vh;
+      right: 5vw;
+      height: 40vh;
+      cursor: pointer;
+   }
+
+   &.anna {
+      & .popup-job {
+         color: var(--anna-second-color);
+      }
+
+      & .popup-sub span {
+         background-color: var(--anna-second-color);
+      }
+
+      & .headline-text {
+         border-color: var(--anna-color);
+         color: var(--anna-color);
+      }
+
+      & .headline-pointer {
+         border-color: var(--anna-color);
+      }
+   }
+
+   &.max {
+      & .popup-job {
+         color: var(--max-second-color);
+      }
+
+      & .popup-sub span {
+         background-color: var(--max-second-color);
+      }
+
+      & .headline-text {
+         border-color: var(--max-color);
+         color: var(--max-color);
+      }
+
+      & .headline-pointer {
+         border-color: var(--max-color);
+      }
+   }
+
+   &.georg {
+      & .popup-job {
+         color: var(--georg-second-color);
+      }
+
+      & .popup-sub span {
+         background-color: var(--georg-second-color);
+      }
+
+      & .headline-text {
+         border-color: var(--georg-color);
+         color: var(--georg-color);
+      }
+
+      & .headline-pointer {
+         border-color: var(--georg-color);
+      }
+   }
+}
+
+.popups {
+   position: fixed;
+   display: none;
+   top: 0;
+   right: 0;
+   height: 100vh;
+   max-height: 100%;
+   width: 100vw;
+
+   & .popup-next {
+      position: absolute;
+      bottom: 6%;
+
+   }
+
+   & .nav-arrows span {
+      position: absolute;
+      z-index: 2000;
+      top: calc(50vh - 3vw / 2);
+      width: 3vw;
+      height: 3vw;
+      cursor: pointer;
+
+      & img {
+            width: 100%;
+            height: 100%;
+            background-color: var(--icon-pfeil-color);
+      }
+   }
+
+
+   & .nav-arrows span.nav-arrow-prev {
+      left: 5%;
+   }
+
+   & .nav-arrows span.nav-arrow-next {
+      right: 5%;
+      & img {
+            transform-origin: 50% 50%;
+            transform: rotate(180deg);
+      }
+   }
+
+   & .nav-dots {
+      text-align: center;
+      position: absolute;
+      bottom: 2%;
+      height: 30px;
+      width: 100%;
+      left: 0;
+      z-index: 1000;
+   }
+
+   & .nav-dots span {
+      display: inline-block;
+      position: relative;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      margin: 3px;
+      background: #ddd;
+      background: rgba(150,150,150,0.4);
+      cursor: pointer;
+      box-shadow: 
+         0 1px 1px rgba(255,255,255,0.4), 
+         inset 0 1px 1px rgba(0,0,0,0.1);
+   }
+
+   & .nav-dots span.nav-dot-current:after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 3px;
+      left: 3px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.8);
+   }
+
+   @nest .popup-open & {
+      display: block;
+   }
+}
+

@@ -1,0 +1,70 @@
+@import '../variables.pcss';
+
+.buttons {
+   position: absolute;
+   top: 3vw;
+   right: 3vw;
+   display: flex;
+   z-index: 50000;
+   align-items: flex-start;
+
+   & .button {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 2vw;
+      margin-left: 2vw;
+      text-decoration: none;
+
+      & img {
+         width: 5vw;
+         height: 5vw;
+      }
+
+      & div {
+         overflow: hidden;
+         box-sizing: border-box;
+         white-space: nowrap;
+         width: 0;
+         opacity: 0;
+         transition: all .75s ease;
+         text-align: center;
+         color: var(--white-color);
+      }
+
+      &:hover {
+         & div {
+            opacity: 1;
+            width: 15vw;
+         }
+      }
+
+      &.info:hover {
+         & div {
+            width: 30vw;
+         }
+      }
+   }
+
+   & .los {
+      background-color: var(--icon-los-color)
+   }
+
+   & .close {
+      background-color: var(--icon-close-color)
+   }
+
+   & .kaufen {
+      background-color: var(--icon-kaufen-color)
+   }
+
+   & .again {
+      background-color: var(--icon-again-color)
+   }
+
+   & .info {
+      background-color: var(--icon-info-color)
+   }
+
+}

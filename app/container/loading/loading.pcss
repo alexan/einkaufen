@@ -1,0 +1,27 @@
+@import '../../variables.pcss';
+
+.loading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100%;
+  display: none;
+  z-index: 40000;
+  opacity: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  background-color: var(--background-color);
+
+  & img {
+    width: 10vw;
+    animation: flip 4s infinite linear;
+    padding-bottom: 5vh;
+  }
+
+  @nest .container--loading & {
+     display: flex;
+  }
+}
+
