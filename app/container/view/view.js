@@ -10,6 +10,7 @@ import $ from 'jquery'
 let animating = false
 let slider
 let open
+let reinit
 const $target = $('.view .diff_list')
 const $before = $('.view .before')
 const $afterOuter = $('.view .after-outer')
@@ -51,7 +52,7 @@ $('.naturana').click(() => {
    changeImage('naturana')
 })
 
-$('.vr-pack, .close').click(() => {
+$('.view .vr-pack, .view .close').click(() => {
    $('.view .vr').removeClass('visible')
    $(`.view .vr-${open}`).addClass('visible')
    imageMap.selector = $('.view .after-holder img[usemap].visible').toArray()
@@ -83,7 +84,9 @@ const init = (router) => {
             $after.css({ width : afterWidth(), })
          },
       }).element.appendTo('.view .slider')
+   }
 
+   if(reinit) {
       let interval = setInterval(() => {
          value = value + 0.003
          slider.slider('value', value)
@@ -92,6 +95,8 @@ const init = (router) => {
             clearInterval(interval)
          }
       }, 10)
+
+      reinit = false
    }
 
    $after
@@ -126,11 +131,12 @@ const cleanUp = () => {
 
 export default {
    handler: (openPerson = 'max', router) => {
+      reinit = true
+      value = 0
       open = openPerson
       $('body').addClass(`select-${openPerson}`)
       $('body').addClass('view-open')
       $(`.view .vr-${openPerson}`).addClass('visible')
-      $('.view .kaufen, .view .map-detail').off('click')
 
       init(router)
 
@@ -144,6 +150,8 @@ export default {
       $(`.view .vr`).removeClass('visible')
       $('body').removeClass(`select-${openPerson}`)
       $('body').removeClass('view-open')
+      $(`.view .vr-${open}-${packa}`).removeClass('visible')
+      $('.view .pack-container').removeClass('show')
       $(window).off('.view')
    },
 }
