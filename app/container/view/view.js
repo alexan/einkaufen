@@ -52,14 +52,6 @@ $('.naturana').click(() => {
    changeImage('naturana')
 })
 
-$('.view .vr-pack, .view .close').click(() => {
-   $('.view .vr').removeClass('visible')
-   $(`.view .vr-${open}`).addClass('visible')
-   imageMap.selector = $('.view .after-holder img[usemap].visible').toArray()
-   $('.view .pack-container').removeClass('show')
-   imageMap.update()
-})
-
 const init = (router) => {
    $before.css({ height: '', })
    width = $before.width()
@@ -140,6 +132,14 @@ export default {
 
       init(router)
 
+      $('.view .vr-pack, .view .close').click(() => {
+         $('.view .vr').removeClass('visible')
+         $(`.view .vr-${open}`).addClass('visible')
+         $('.view .pack-container').removeClass('show')
+         imageMap.selector = $('.view .after-holder img[usemap].visible').toArray()
+         imageMap.update()
+      })
+
       $(window).on('resize.view', () => {
          cleanUp()
          init(router)
@@ -152,6 +152,7 @@ export default {
       $('body').removeClass('view-open')
       $(`.view .vr-${open}-${packa}`).removeClass('visible')
       $('.view .pack-container').removeClass('show')
+      $('.view .vr-pack, .view .close').off('click')
       $(window).off('.view')
    },
 }
